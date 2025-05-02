@@ -1,0 +1,14 @@
+<!-- public/upload.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Face Upload</title>
+</head>
+<body>
+  <h1>Upload Images for Face Detection</h1>
+  <form action="/api/detect-faces" method="post" enctype="multipart/form-data">
+    <input type="file" name="images" multiple accept="image/*">
+    <button type="submit">Process</button>
+  </form>
+</body>
+</html>

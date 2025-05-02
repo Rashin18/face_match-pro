@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Face Match Pro</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <h1>Face Match Pro</h1>
+      <p class="tagline">AI-powered face recognition system</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Upload Reference Image or Take Photo</h2>
+      <input type="file" id="referenceImage" accept="image/*" />
+      <div style="margin-top: 10px;">
+        <button id="takePhotoBtn">📸 Take Photo</button>
+      </div>
+      <video id="camera" width="200" autoplay style="display: none; margin-top: 10px;"></video>
+      <canvas id="snapshot" width="200" height="200" style="display: none;"></canvas>
+      <div id="referencePreview" class="preview-box"></div>
+    </section>
+
+    
+    
+    <section class="card">
+      <h2>Upload Folder of Images</h2>
+      <input type="file" id="imageFolder" multiple webkitdirectory directory accept="image/*" />
+      <div id="folderInfo"></div>
+    </section>
+
+    <div class="loader hidden" id="loader"></div>
+    <button id="processBtn" class="primary">🔍 Find Matching Faces</button>
+
+    <section id="results" class="hidden card">
+      <h2>Match Results</h2>
+      <p>✅ Found <span id="matchCount">0</span> match(es)</p>
+      <button id="downloadBtn" class="success">⬇️ Download Matches</button>
+      <canvas id="similarityChart" height="150"></canvas>
+      <div id="matchList"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Face Match Pro · Built by Rashin Hamza · Powered by AWS Rekognition</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
